@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>O Príncipe de muitas mãos</title>
+<meta name="description" content="Um mito da quebrada brasileira: Palmares, Canudos, as Ligas Camponesas e o moderno Príncipe de Gramsci, contado em cenas.">
+<meta property="og:title" content="O Príncipe de muitas mãos">
+<meta property="og:description" content="Um mito da quebrada brasileira: Palmares, Canudos, as Ligas Camponesas e o moderno Príncipe de Gramsci, contado em cenas.">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pt_BR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Archivo:wght@500;800&display=swap">
+<style>
+/* VOICE occasion: um mito contado na roda, grave e popular, com a energia de um cartaz de rap
+   IDEA uma capa de disco de rap psicodélico que ganha vida: raios girando, relâmpagos, néon sobre roxo, tudo em tela cheia
+   PICTURE cada capítulo é uma cena em tela inteira, presa enquanto o texto rola por cima e a câmera passeia, dá zoom e vira a luz
+   COLOUR roxo-noite de chão, magenta e ciano como as duas forças, amarelo-sol e laranja nas chamas, creme no texto
+   TYPE Bungee, a letra de placa e grafite, para títulos; Archivo pesado para as falas
+   LAYOUT tudo em tela cheia; as falas aparecem uma a uma em cantos diferentes; no celular a câmera aproxima o centro da cena */
+:root{color-scheme:dark;--ink:#160a1f;--night:#1d0b33;--plum:#3a1257;--mag:#ff2e88;--hot:#ff5a1f;--sun:#ffc928;--cyan:#22d3c5;--cream:#fff1d6;--red:#e3132c}
+*{box-sizing:border-box;min-width:0}
+html,body{margin:0;background:var(--ink);color:var(--cream)}
+body{font:18px/1.45 Archivo,"Helvetica Neue",Arial,sans-serif;overflow-x:clip}
+#bar{position:fixed;top:0;left:0;height:6px;width:100%;background:linear-gradient(90deg,var(--mag),var(--sun),var(--cyan));transform-origin:0 50%;transform:scaleX(0);z-index:20}
+.ch{position:relative}
+.pin{position:sticky;top:0;height:100svh;overflow:hidden}
+.scene{position:absolute;inset:0;width:100%;height:100%;display:block}
+.lines{position:absolute;inset:0;pointer-events:none}
+.pin::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(22,10,31,.62) 0,rgba(22,10,31,0) 30%,rgba(22,10,31,0) 64%,rgba(22,10,31,.66) 100%)}
+.lines{z-index:2}
+.ln{position:absolute;display:flex;flex-direction:column;align-items:flex-start;gap:10px;max-width:min(30em,88vw);opacity:0;will-change:opacity,transform}
+.ln p{margin:0;width:fit-content;max-width:100%;background:var(--cream);color:var(--ink);font:700 clamp(18px,2vw,27px)/1.3 Archivo,Arial,sans-serif;padding:.45em .7em .5em;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);text-wrap:pretty}
+.ln p.y{background:var(--sun)}
+.ln.q p{background:var(--ink);color:var(--cream);border-color:var(--cream);box-shadow:6px 6px 0 var(--mag);font-weight:500;font-style:italic;max-width:24em}
+.ln.q b{display:block;margin-bottom:.45em;font:400 13px/1.2 Bungee,Impact,sans-serif;font-style:normal;color:var(--sun);letter-spacing:.02em}
+.ln.big p{background:var(--ink);color:var(--cream);border-color:var(--cream);font:400 clamp(30px,5.6vw,84px)/1.02 Bungee,Impact,sans-serif;padding:.18em .35em .22em;box-shadow:.09em .09em 0 var(--mag);text-wrap:balance;max-width:13em}
+.titlebox{background:rgba(22,10,31,.88);border:3px solid var(--cream);box-shadow:8px 8px 0 var(--mag);padding:clamp(16px,2.4vw,30px);max-width:min(36rem,88vw)}
+.titlebox p{background:none;border:0;box-shadow:none;padding:0;margin:0}
+.titlebox .kick{font:800 clamp(17px,1.8vw,24px)/1.2 Archivo,sans-serif;color:var(--sun);margin-bottom:10px}
+.titlebox .hint{font:500 15px/1.35 Archivo,sans-serif;color:var(--cream);margin-top:14px}
+.tr,.br{align-items:flex-end}.c,.tc,.bc{align-items:center}
+.tl{top:11%;left:5%}.tr{top:11%;right:5%;text-align:right}.bl{bottom:9%;left:5%}.br{bottom:9%;right:5%;text-align:right}.c{top:50%;left:50%;text-align:center;translate:-50% -50%}
+.tc{top:9%;left:50%;text-align:center;translate:-50% 0}.bc{bottom:9%;left:50%;text-align:center;translate:-50% 0}
+.chip{position:absolute;right:16px;top:16px;z-index:3;font:400 14px/1 Bungee,Impact,sans-serif;color:var(--cream);background:#0008;padding:8px 10px;border-radius:4px;letter-spacing:.02em}
+h1{margin:0;font:400 clamp(38px,5.4vw,84px)/.98 Bungee,Impact,sans-serif;color:var(--cream);text-shadow:.05em .05em 0 var(--mag)}
+.kick{font:800 clamp(18px,2vw,26px)/1.2 Archivo,sans-serif;color:var(--sun)}
+.hint{font:500 15px/1.3 Archivo,sans-serif;color:var(--cream);opacity:.85}
+footer{padding:48px max(5vw,16px) 64px;background:var(--ink);color:#cfc3d6;font-size:15px;display:flex;flex-wrap:wrap;gap:12px 40px;justify-content:space-between;border-top:6px solid var(--mag)}
+footer p{margin:0;max-width:62em}
+svg text{font-family:Bungee,Impact,sans-serif}
+.spin{transform-box:fill-box;transform-origin:center;animation:spin 60s linear infinite}
+.spin.fast{animation-duration:16s}
+.flick{transform-box:fill-box;transform-origin:50% 100%;animation:flick .35s ease-in-out infinite alternate}
+.drift{animation:drift 9s linear infinite}
+.sway{transform-box:fill-box;transform-origin:50% 100%;animation:sway 3.2s ease-in-out infinite alternate}
+@keyframes sway{from{transform:rotate(-3deg)}to{transform:rotate(3deg)}}
+.rain{animation:rain .6s linear infinite}
+.twk{animation:twk 2.4s ease-in-out infinite alternate}
+.zap{animation:zap 4s steps(1) infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes flick{from{transform:scale(1,1)}to{transform:scale(.9,1.12)}}
+@keyframes drift{to{transform:translateX(-400px)}}
+@keyframes rain{to{transform:translate(-40px,120px)}}
+@keyframes twk{from{opacity:.2}to{opacity:1}}
+@keyframes zap{0%,100%{opacity:0}61%{opacity:.9}63%{opacity:0}66%{opacity:.7}68%{opacity:0}}
+@media(max-width:700px){.ln{max-width:90vw}.tl,.bl{left:5%}.tr,.br{right:5%}.tl,.tr{top:9%}.bl,.br{bottom:7%}.ln p{box-shadow:4px 4px 0 var(--ink)}.chip{font-size:12px}}
+@media(prefers-reduced-motion:reduce){
+.ch{height:auto!important}.pin{position:relative;height:auto;overflow:visible;display:flex;flex-direction:column}
+.scene{position:relative;height:70svh}.lines{position:relative;display:flex;flex-direction:column;gap:18px;padding:24px max(5vw,16px) 48px}
+.ln{position:relative;opacity:1!important;transform:none!important;translate:none;inset:auto;text-align:left;max-width:none;align-items:flex-start}.ln>*{opacity:1!important}.pin::after{display:none}
+.spin,.flick,.drift,.rain,.twk,.zap,.sway{animation:none}
+}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="2.4" fill="#22d3c5"/></pattern>
+<pattern id="dotsM" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="2.2" fill="#ff2e88"/></pattern>
+<pattern id="brick" width="60" height="30" patternUnits="userSpaceOnUse"><rect width="60" height="30" fill="#ff5a1f"/><path d="M0 15H60M30 0V15M0 15V30M60 15V30" stroke="#160a1f" stroke-width="4"/><path d="M4 4h20M34 19h20" stroke="#ffc928" stroke-width="3" opacity=".6"/></pattern>
+<radialGradient id="glow"><stop offset="0" stop-color="#ffc928" stop-opacity=".85"/><stop offset=".45" stop-color="#ff5a1f" stop-opacity=".35"/><stop offset="1" stop-color="#ff2e88" stop-opacity="0"/></radialGradient>
+<linearGradient id="sky1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0d0520"/><stop offset="1" stop-color="#3a1257"/></linearGradient>
+<linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff5a1f"/><stop offset="1" stop-color="#ff2e88"/></linearGradient>
+<linearGradient id="sky3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffc928"/><stop offset="1" stop-color="#ff5a1f"/></linearGradient>
+<linearGradient id="sky4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b0f4a"/><stop offset=".65" stop-color="#ff2e88"/><stop offset="1" stop-color="#ff5a1f"/></linearGradient>
+<linearGradient id="sky5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22d3c5"/><stop offset="1" stop-color="#ffc928"/></linearGradient>
+<linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22d3c5"/><stop offset="1" stop-color="#0b4f63"/></linearGradient>
+<g id="flame"><path d="M0 0C-40-14-36-62 0-110C6-74 40-62 30-24C26-8 14 0 0 0Z" fill="#ff2e88" stroke="#160a1f" stroke-width="5"/><path d="M0-6C-22-14-20-42 0-70C4-46 22-40 16-18C12-10 6-6 0-6Z" fill="#ff5a1f"/><path d="M0-10C-10-16-9-30 0-42C3-30 10-26 7-17C5-13 3-10 0-10Z" fill="#ffc928"/></g>
+<g id="mini"><circle cy="-38" r="11"/><path d="M-17 0L-14-22Q-12-28-5-28H5Q12-28 14-22L17 0Z"/></g>
+<g id="bolt"><path d="M0 0L60-10L30 60L95 50L10 190L40 85L-20 95Z" fill="#ffc928" stroke="#160a1f" stroke-width="6" stroke-linejoin="round"/></g>
+<g id="u3">
+<circle cx="120" cy="120" r="72" fill="#fff1d6"/>
+<clipPath id="cl"><circle cx="120" cy="120" r="72"/></clipPath>
+<g clip-path="url(#cl)"><circle cx="146" cy="98" r="30" fill="#ffc928"/><rect x="40" y="132" width="44" height="80" fill="#160a1f"/><rect x="66" y="104" width="34" height="40" fill="#160a1f"/><rect x="100" y="120" width="40" height="92" fill="#160a1f"/><rect x="140" y="140" width="60" height="72" fill="#160a1f"/><path d="M30 192C80 176 120 204 210 178" fill="none" stroke="#22d3c5" stroke-width="9" stroke-linecap="round"/></g>
+<circle cx="120" cy="120" r="84" fill="none" stroke="#e3132c" stroke-width="22"/>
+</g>
+</defs>
+</svg>
+
+<!-- CAPA -->
+<section class="ch" data-k="cover" data-h="2.2">
+<div class="pin">
+<svg class="scene" aria-label="Uma figura gigante de black power e punho erguido, feita de centenas de pessoas, diante de um sol com raios girando"><g class="cam">
+<rect x="-4000" y="-4000" width="9600" height="9000" fill="#1d0b33"/>
+<g class="spin" id="raysA"></g>
+<circle cx="800" cy="430" r="300" fill="#ffc928"/>
+<circle cx="800" cy="430" r="370" fill="none" stroke="#ff2e88" stroke-width="44"/>
+<circle cx="800" cy="430" r="430" fill="none" stroke="#22d3c5" stroke-width="10" stroke-dasharray="4 26" class="spin"/>
+<use href="#bolt" transform="translate(250 180) scale(1.3) rotate(-12)"/><use href="#bolt" transform="translate(1270 160) scale(1.1) rotate(14)"/>
+<g id="giant0"></g>
+<path d="M-4000 860C300 820 600 850 800 840S1300 810 5600 850V5000H-4000Z" fill="#160a1f"/>
+<rect x="-4000" y="-4000" width="9600" height="9000" fill="url(#dots)" opacity=".08"/>
+</g></svg>
+<div class="lines">
+<div class="ln tl" data-t="-1,.6"><div class="titlebox"><p class="kick">Senta que lá vem história.</p><h1>O Príncipe de muitas mãos</h1><p class="hint">Um mito da quebrada brasileira. Role devagar.</p></div></div>
+<div class="ln br" data-t=".6,1.1"><p>Esta história tem um herói sem rosto.</p><p class="y">No fim, você vai entender por quê.</p></div>
+</div>
+</div>
+</section>
+
+<!-- I -->
+<section class="ch" data-k="dispersed">
+<div class="pin">
+<svg class="scene" aria-label="Uma terra imensa à noite, onde fogueiras de revolta acendem uma por vez e se apagam"><g class="cam">
+<rect x="-4000" y="-4000" width="9600" height="9000" fill="url(#sky1)"/>
+<g id="stars"></g>
+<circle cx="1180" cy="170" r="70" fill="none" stroke="#22d3c5" stroke-width="8"/><circle cx="1210" cy="150" r="58" fill="#1d0b33"/>
+<path d="M-4000 430C200 380 500 450 800 410S1300 370 5600 420V5000H-4000Z" fill="#3a1257" stroke="#160a1f" stroke-width="6"/>
+<path d="M-4000 560C150 520 450 600 800 550S1300 530 5600 560V5000H-4000Z" fill="#0f8f8a" stroke="#160a1f" stroke-width="6"/>
+<path d="M-4000 560C150 520 450 600 800 550S1300 530 5600 560V5000H-4000Z" fill="url(#dots)" opacity=".35"/>
+<path d="M-4000 720C200 680 500 750 800 700S1300 690 5600 720V5000H-4000Z" fill="#ff2e88" stroke="#160a1f" stroke-width="6"/>
+<g id="curls1" fill="none" stroke="#22d3c5" stroke-width="7" stroke-linecap="round"></g>
+<g id="fires"></g>
+<g transform="translate(1340 395)"><path d="M-70 0V-70L0-110L70-70V0Z" fill="#fff1d6" stroke="#160a1f" stroke-width="6"/><rect x="-18" y="-46" width="36" height="46" fill="#160a1f"/><text x="0" y="-130" text-anchor="middle" font-size="30" fill="#fff1d6">zzz</text></g>
+</g></svg>
+<div class="lines"><div class="ln tl"><p>Era uma vez uma terra grande demais pro olho alcançar.</p></div><div class="ln bl"><p>O povo dessa terra se levantava.</p><p>Muitas vezes.</p></div><div class="ln tl"><p class="y">Canudos. As Ligas. Junho de 2013. O breque dos apps.</p></div><div class="ln bl"><p>Mas cada fogo acendia sozinho…</p><p>…e sozinho se apagava.</p></div><div class="ln tl"><p>No casarão, os donos da terra dormiam tranquilos.</p><p class="y">Sabiam que o povo nunca se levantava junto.</p></div></div>
+<p class="chip">I · O povo disperso</p>
+</div>
+</section>
+
+<!-- II -->
+<section class="ch" data-k="promises">
+<div class="pin">
+<svg class="scene" aria-label="Um panorama de três cenas: o círculo de 1888 com um pedaço faltando e um quepe de polícia no buraco, o morro de lajes de 1964 e o rio cortado do sertão em 1897"><g class="cam">
+<rect x="-4000" y="-4000" width="5600" height="9000" fill="url(#sky2)"/>
+<rect x="1600" y="-4000" width="1600" height="9000" fill="#1d0b33"/>
+<rect x="3200" y="-4000" width="5600" height="9000" fill="url(#sky3)"/>
+<rect x="-4000" y="-4000" width="5600" height="9000" fill="url(#dotsM)" opacity=".18"/>
+<text x="800" y="230" text-anchor="middle" font-size="200" fill="none" stroke="#fff1d6" stroke-width="8">1888</text>
+<g transform="translate(800 520)">
+<path d="M64.6-142A156 156 0 1 1-142 64.6" fill="none" stroke="#160a1f" stroke-width="70"/>
+<path d="M64.6-142A156 156 0 1 1-142 64.6" fill="none" stroke="#fff1d6" stroke-width="54"/>
+<path id="gapq" d="M-142 18A156 156 0 0 1 18-142" fill="none" stroke="#e3132c" stroke-width="10" stroke-dasharray="20 18"/>
+<g id="cap" transform="translate(-112 -112) rotate(-45)"><path d="M-60 0Q-60-46 0-50Q60-46 60 0Z" fill="#160a1f"/><rect x="-70" y="-6" width="140" height="18" rx="6" fill="#160a1f"/><circle cy="-24" r="12" fill="#ffc928"/></g>
+</g>
+<g id="chain" fill="none" stroke="#160a1f" stroke-width="22"><ellipse cx="380" cy="760" rx="60" ry="34"/><ellipse cx="480" cy="760" rx="60" ry="34"/><ellipse cx="1170" cy="720" rx="60" ry="34" transform="rotate(30 1170 720)"/><ellipse cx="1280" cy="680" rx="60" ry="34" transform="rotate(-20 1280 680)"/></g>
+<text x="2400" y="230" text-anchor="middle" font-size="200" fill="none" stroke="#22d3c5" stroke-width="8">1964</text>
+<path d="M1600 900L2120 420L2780 380L3200 560V900Z" fill="#0f8f8a" stroke="#160a1f" stroke-width="8"/>
+<path d="M1600 900L2120 420L2780 380L3200 560V900Z" fill="url(#dots)" opacity=".3"/>
+<g id="lajes"></g>
+<path d="M1640 880C1800 860 1900 820 2000 800" fill="none" stroke="#ffc928" stroke-width="16" stroke-dasharray="40 24"/>
+<g transform="translate(1720 770) rotate(-35)"><rect x="-6" y="-120" width="12" height="130" fill="#8a4b26" stroke="#160a1f" stroke-width="4"/><path d="M-6-120h-46v26h46z" fill="#fff1d6" stroke="#160a1f" stroke-width="4"/></g>
+<text x="4000" y="230" text-anchor="middle" font-size="200" fill="none" stroke="#160a1f" stroke-width="8">1897</text>
+<path d="M3200 640C3600 600 4000 660 4800 620V900H3200Z" fill="#e8a33a" stroke="#160a1f" stroke-width="6"/>
+<g stroke="#160a1f" stroke-width="5" fill="none"><path d="M3300 720l60 30 40-20 70 40M3700 760l50-24 60 34 30-20M4200 700l40 40 60-10"/></g>
+<path d="M3380 830C3600 820 3640 640 3900 640S4300 470 4560 420" fill="none" stroke="#160a1f" stroke-width="44" stroke-linecap="round" stroke-dasharray="150 60"/>
+<path d="M3380 830C3600 820 3640 640 3900 640S4300 470 4560 420" fill="none" stroke="#22d3c5" stroke-width="28" stroke-linecap="round" stroke-dasharray="150 60"/>
+<g fill="#e3132c" stroke="#160a1f" stroke-width="8"><circle cx="3380" cy="830" r="34"/><circle cx="3900" cy="640" r="34"/><circle cx="4560" cy="420" r="34"/></g>
+<g transform="translate(4420 640)" fill="#0f8f8a" stroke="#160a1f" stroke-width="6"><path d="M-14 0V-190Q0-206 14-190V0Z"/><path d="M-14-90H-60V-150Q-50-162-40-150V-110H-14ZM14-120H56V-170Q46-182 36-170V-138H14Z"/></g>
+<use href="#bolt" transform="translate(1560 300) scale(1.6)"/><use href="#bolt" transform="translate(3160 260) scale(1.6) rotate(8)"/>
+</g></svg>
+<div class="lines"><div class="ln bc big"><p>Três promessas</p></div><div class="ln bl"><p>1888. “Agora vocês são livres”, disseram.</p><p>Livres sem terra, sem trabalho, sem direito.</p></div><div class="ln bl"><p>A liberdade veio faltando um pedaço.</p><p class="y">E no buraco puseram a polícia.</p></div><div class="ln bl"><p>1964. O povo do campo pediu terra.</p><p>Ganhou a estrada pra cidade.</p></div><div class="ln bl"><p>Subiu o morro na unha, laje por laje.</p><p class="y">A favela é a reforma agrária que não veio.</p></div><div class="ln bl"><p>Canudos. Cabanagem. Sudene.</p><p>Toda vez que o sertão e o Norte tentaram se ligar ao resto do país…</p><p class="y">…cortaram o rio.</p></div><div class="ln bl"><p>Três promessas quebradas.</p><p class="y">Um só dono quebrando as três, porque vive disso.</p></div></div>
+<p class="chip">II · As três promessas quebradas</p>
+</div>
+</section>
+
+<!-- Ponto 1 · Palmares -->
+<section class="ch" data-k="palmares">
+<div class="pin">
+<svg class="scene" aria-label="Um quilombo de palmeiras e mocambos no alto da Serra da Barriga, cercado por bandeirantes com canhões, e depois a silhueta de Zumbi desenhada em estrelas no céu"><g class="cam">
+<rect x="-4000" y="-4000" width="9600" height="9000" fill="url(#sky4)"/>
+<g id="stars2"></g>
+<path d="M-4000 900L150 900C380 640 560 330 800 280C1040 330 1220 640 1450 900L5600 900V5000H-4000Z" fill="#0f8f8a" stroke="#160a1f" stroke-width="8"/>
+<path d="M-4000 900L150 900C380 640 560 330 800 280C1040 330 1220 640 1450 900L5600 900V5000H-4000Z" fill="url(#dots)" opacity=".3"/>
+<g id="palms"></g><g id="huts"></g><g id="stake"></g>
+<g id="pfire" transform="translate(800 330)"><circle cy="-40" r="110" fill="url(#glow)"/><g class="flick"><use href="#flame" transform="scale(.6)"/></g></g>
+<g id="hutfire" opacity="0"></g>
+<path d="M-4000 900H5600V5000H-4000Z" fill="#160a1f"/>
+<g id="band"></g><g id="puffs" opacity="0"></g>
+<g id="zumbi" opacity="0"></g>
+</g></svg>
+<div class="lines"><div class="ln tc big"><p>Antes da promessa, houve Palmares</p></div><div class="ln bl"><p>Serra da Barriga, Alagoas, começo do século XVII.</p><p>Gente fugida dos engenhos subiu a serra e não desceu mais.</p></div><div class="ln bl"><p>Lá em cima ninguém tinha dono.</p><p>Plantavam milho, feijão e mandioca. Trabalhavam o ferro. Faziam família.</p></div><div class="ln bl"><p>Palmares durou quase um século.</p><p class="y">Chegou a reunir milhares de pessoas, espalhadas em vários mocambos.</p></div><div class="ln bl"><p>Em 1678, o governo ofereceu um acordo ao rei Ganga Zumba:</p><p>paz para quem já vivia em Palmares, desde que os novos fugidos fossem devolvidos.</p></div><div class="ln bl"><p>Zumbi recusou.</p><p class="y">Liberdade pela metade não servia.</p></div><div class="ln bl"><p>Em 1694, os bandeirantes de Domingos Jorge Velho cercaram a serra com canhões.</p><p>O mocambo do Macaco caiu.</p></div><div class="ln bl"><p>Zumbi escapou e lutou por mais um ano.</p><p>Foi morto numa emboscada em 20 de novembro de 1695.</p></div><div class="ln bl"><p>Levaram a cabeça dele para o Recife e a expuseram em praça pública.</p><p class="y">Queriam provar que ele tinha morrido.</p></div><div class="ln tc big"><p>Não adiantou</p></div><div class="ln bl"><p>1910: João Cândido e os marinheiros tomam os navios contra a chibata.</p><p>2006: as Mães de Maio enterram os filhos e saem para a rua.</p><p class="y">A mesma luta: completar a Abolição.</p></div></div>
+<p class="chip">Ponto 1 · Palmares</p>
+</div>
+</section>
+
+<!-- Ponto 3 · Canudos -->
+<section class="ch" data-k="canudos">
+<div class="pin">
+<svg class="scene" aria-label="Uma cidade de taipa cresce no sertão em volta de uma igreja; tropas com canhões chegam, as casas queimam e restam quatro pessoas de pé"><g class="cam">
+<rect x="-4000" y="-4000" width="9600" height="9000" fill="url(#sky3)"/>
+<circle cx="1220" cy="190" r="120" fill="#fff1d6" opacity=".9"/>
+<path d="M-4000 520C200 480 500 540 800 500S1300 470 5600 510V5000H-4000Z" fill="#e8a33a" stroke="#160a1f" stroke-width="7"/>
+<path d="M-4000 650C200 620 600 680 900 640S1400 620 5600 650V5000H-4000Z" fill="#d48a2a" stroke="#160a1f" stroke-width="7"/>
+<path d="M-400 860C200 820 500 900 900 840S1500 800 2200 830" fill="none" stroke="#160a1f" stroke-width="44" stroke-linecap="round"/>
+<path d="M-400 860C200 820 500 900 900 840S1500 800 2200 830" fill="none" stroke="#22d3c5" stroke-width="28" stroke-linecap="round"/>
+<g id="cacti"></g>
+<g id="church" transform="translate(800 560)" stroke="#160a1f" stroke-width="6"><rect x="-70" y="-120" width="140" height="120" fill="#fff1d6"/><path d="M-70-120L0-170L70-120Z" fill="#ff5a1f"/><rect x="-110" y="-200" width="44" height="200" fill="#fff1d6"/><rect x="66" y="-200" width="44" height="200" fill="#fff1d6"/><path d="M-116-200L-88-236L-60-200ZM60-200L88-236L116-200Z" fill="#ff5a1f"/><path d="M-18 0V-50Q0-66 18-50V0Z" fill="#160a1f"/></g>
+<g id="houses"></g>
+<g id="burn"></g>
+<g id="troops"></g><g id="smoke"></g>
+<g id="last4" opacity="0" transform="translate(360 0)"><circle cx="800" cy="700" r="210" fill="url(#glow)"/></g>
+<path d="M-4000 960H5600V5000H-4000Z" fill="#160a1f"/>
+</g></svg>
+<div class="lines"><div class="ln tc big"><p>Belo Monte</p></div><div class="ln tl"><p>1893. Sertão da Bahia.</p><p>Um beato chamado Antônio Conselheiro para à beira do rio Vaza-Barris.</p></div><div class="ln tl"><p>Atrás dele vieram vaqueiros, ex-escravizados, indígenas, retirantes.</p><p>Gente que a República recém-nascida preferia não ver.</p></div><div class="ln tl"><p>Ergueram uma cidade sem coronel.</p><p class="y">Em poucos anos, Belo Monte tinha milhares de casas de taipa e era uma das maiores cidades da Bahia.</p></div><div class="ln tl"><p>A terra era de quem trabalhava nela.</p><p class="y">Para os coronéis, isso era pior do que qualquer seca.</p></div><div class="ln tl"><p>O governo mandou uma expedição. Voltou derrotada.</p><p>Mandou outra. E mais outra.</p></div><div class="ln tl"><p>A quarta veio com milhares de soldados e canhões.</p></div><div class="ln tl"><p>Em 5 de outubro de 1897, Canudos caiu.</p><p class="y">Os últimos defensores eram um velho, dois homens e uma criança.</p></div><div class="ln tl q"><p><b>Euclides da Cunha · Os Sertões</b>Canudos não se rendeu. Exemplo único em toda a história, resistiu até ao esgotamento completo.</p></div><div class="ln tl"><p>Sessenta anos antes, a Cabanagem tinha sido afogada em sangue no Pará.</p><p>Em 1959, Celso Furtado criou a Sudene para ligar o Nordeste ao país. Em 1964, foi cassado.</p><p class="y">A mesma luta: integrar a periferia do país.</p></div></div>
+<p class="chip">Ponto 3 · Canudos</p>
+</div>
+</section>
+
+<!-- Ponto 2 · A terra e o golpe -->
+<section class="ch" data-k="terra">
+<div class="pin">
+<svg class="scene" aria-label="Camponeses com enxadas e a faixa da Liga Camponesa num canavial; a multidão na Central do Brasil; tanques chegando; e retirantes subindo um morro de lajes"><g class="cam">
+<rect x="-4000" y="-4000" width="5600" height="9000" fill="url(#sky5)"/>
+<rect x="1600" y="-4000" width="1600" height="9000" fill="#1d0b33"/>
+<rect x="3200" y="-4000" width="5600" height="9000" fill="url(#sky2)"/>
+<path d="M-4000 860H5600V5000H-4000Z" fill="#160a1f"/>
+<rect x="1180" y="300" width="70" height="380" fill="#3a1257" stroke="#160a1f" stroke-width="7"/>
+<g class="drift"><circle cx="1230" cy="260" r="40" fill="#fff1d6" opacity=".6"/><circle cx="1290" cy="220" r="52" fill="#fff1d6" opacity=".45"/><circle cx="1370" cy="190" r="64" fill="#fff1d6" opacity=".3"/></g>
+<g id="cane"></g>
+<g id="ligas"></g>
+<g transform="translate(300 560)"><rect x="0" y="0" width="12" height="300" fill="#8a4b26" stroke="#160a1f" stroke-width="4"/><rect x="760" y="0" width="12" height="300" fill="#8a4b26" stroke="#160a1f" stroke-width="4"/><rect x="0" y="0" width="772" height="74" fill="#e3132c" stroke="#160a1f" stroke-width="6"/><text x="386" y="50" text-anchor="middle" font-size="34" fill="#fff1d6">LIGA CAMPONESA</text></g>
+<g transform="translate(2400 0)" stroke="#160a1f" stroke-width="7"><rect x="-70" y="140" width="140" height="560" fill="#fff1d6"/><circle cx="0" cy="230" r="52" fill="#ffc928"/><path d="M0 230V196M0 230L24 244" stroke-width="7"/><rect x="-200" y="560" width="400" height="140" fill="#fff1d6"/><g fill="#160a1f" stroke="none"><rect x="-170" y="590" width="40" height="60"/><rect x="-100" y="590" width="40" height="60"/><rect x="60" y="590" width="40" height="60"/><rect x="130" y="590" width="40" height="60"/></g></g>
+<g id="central"></g>
+<g transform="translate(1880 470)"><rect width="440" height="70" fill="#ffc928" stroke="#160a1f" stroke-width="6"/><text x="220" y="48" text-anchor="middle" font-size="32" fill="#160a1f">REFORMAS DE BASE</text></g>
+<g id="tanks"></g>
+<path d="M3200 900L3720 420L4380 380L4800 560V900Z" fill="#0f8f8a" stroke="#160a1f" stroke-width="8"/>
+<g id="lajes2"></g>
+<path d="M3200 840L3600 800" stroke="#ffc928" stroke-width="14" stroke-dasharray="36 22"/>
+<g id="walkers"></g>
+</g></svg>
+<div class="lines"><div class="ln tc big"><p>A terra e o golpe</p></div><div class="ln bl"><p>1955. Engenho Galileia, Pernambuco.</p><p>Os foreiros se juntam para não serem expulsos da terra.</p><p class="y">Nasce a primeira Liga Camponesa.</p></div><div class="ln bl"><p>As Ligas se espalham pelo Nordeste com um grito só:</p></div><div class="ln c big"><p>Reforma agrária na lei ou na marra!</p></div><div class="ln bl"><p>1962. Sapé, Paraíba. João Pedro Teixeira, líder da Liga, é morto numa emboscada.</p><p class="y">Elizabeth, a viúva, assume o lugar dele.</p></div><div class="ln bl"><p>1963. Arquitetos, estudantes e movimentos se reúnem e escrevem uma reforma urbana.</p><p>A terra da cidade também ia ter função social.</p></div><div class="ln bl"><p>13 de março de 1964. Na Central do Brasil, diante de uma multidão,</p><p>o presidente assina o decreto que desapropria terras à beira das estradas.</p></div><div class="ln tc big"><p>Menos de três semanas depois, vieram os tanques</p></div><div class="ln bl"><p>As Ligas foram caçadas.</p><p>Elizabeth passou dezessete anos escondida, com outro nome.</p></div><div class="ln bl"><p>No campo, a terra virou pasto e máquina.</p><p>Milhões foram empurrados para a beira das cidades.</p><p class="y">E subiram o morro na unha.</p></div><div class="ln bl"><p>1996: em Eldorado dos Carajás, a polícia mata dezenove sem-terra numa estrada do Pará.</p><p>2013: vinte centavos na passagem botam o país inteiro na rua.</p><p class="y">A mesma luta: o direito à cidade.</p></div></div>
+<p class="chip">Ponto 2 · A terra e o golpe</p>
+</div>
+</section>
+
+<!-- III -->
+<section class="ch" data-k="river">
+<div class="pin">
+<svg class="scene" aria-label="Um rio em enchente sobe e engole as casinhas de uma margem, enquanto um dique de tijolos protege as casas da outra"><g class="cam">
+<rect x="-4000" y="-4000" width="9600" height="9000" fill="#2a0e45"/>
+<g class="zap"><rect x="-4000" y="-4000" width="9600" height="9000" fill="#fff1d6" opacity=".35"/></g>
+<g id="rainG" stroke="#22d3c5" stroke-width="4" stroke-linecap="round" opacity=".7"><g class="rain" id="rainL"></g></g>
+<g id="favL"></g>
+<g id="favR"></g>
+<g id="wl"><g class="drift"><path id="w1" fill="url(#water)" stroke="#160a1f" stroke-width="6"/><path id="w1b" fill="none" stroke="#fff1d6" stroke-width="5" stroke-dasharray="30 40"/></g></g>
+<rect x="960" y="790" width="5000" height="400" fill="url(#water)"/>
+<rect x="900" y="330" width="70" height="600" fill="url(#brick)" stroke="#160a1f" stroke-width="7"/>
+<text id="glub" x="420" y="360" font-size="80" fill="#ffc928" stroke="#160a1f" stroke-width="10" paint-order="stroke" opacity="0">GLUB</text>
+</g></svg>
+<div class="lines"><div class="ln tl q"><p><b>Maquiavel · O Príncipe, cap. XXV</b>A Fortuna é como um rio bravo: quando enche, alaga o campo, arranca as árvores e leva as casas.</p></div><div class="ln tl"><p>Na seca, ninguém fazia dique.</p></div><div class="ln tl"><p>Quando vinha a enchente, era cada um por si.</p></div><div class="ln tl"><p>E toda enchente levava o povo…</p><p>…e deixava os grandes no alto do morro.</p></div><div class="ln tl"><p>O velho florentino deixou o recado:</p><p class="y">virtù é erguer o dique antes da chuva.</p></div></div>
+<p class="chip">III · O rio da Fortuna</p>
+</div>
+</section>
+
+<!-- IV -->
+<section class="ch" data-k="prophets">
+<div class="pin">
+<svg class="scene" aria-label="Um sabichão grita sozinho no alto de uma torre, e na praça um tribuno fala para a multidão enquanto um rio leva suas palavras para dentro de um palácio"><g class="cam">
+<rect x="-4000" y="-4000" width="9600" height="9000" fill="#1d0b33"/>
+<g class="spin" id="raysB" opacity=".5"></g>
+<rect x="250" y="250" width="170" height="1000" fill="#22d3c5" stroke="#160a1f" stroke-width="8"/>
+<rect x="250" y="250" width="170" height="1000" fill="url(#dotsM)" opacity=".5"/>
+<path d="M230 250h210v-40H230z" fill="#ff2e88" stroke="#160a1f" stroke-width="6"/>
+<use href="#mini" transform="translate(335 210) scale(1.8)" fill="#fff1d6" stroke="#160a1f" stroke-width="3"/>
+<g transform="translate(420 70)"><rect width="420" height="96" rx="44" fill="#fff1d6" stroke="#160a1f" stroke-width="7"/><path d="M40 90L-10 150L90 96Z" fill="#fff1d6" stroke="#160a1f" stroke-width="7" stroke-linejoin="round"/><text x="210" y="64" text-anchor="middle" font-size="40" fill="#160a1f">A LINHA CERTA!</text></g>
+<g font-size="34" fill="#fff1d6"><text x="560" y="250" opacity=".55">…certa</text><text x="660" y="320" font-size="26" opacity=".35">…erta</text><text x="720" y="370" font-size="20" opacity=".18">…a</text></g>
+<path id="riv" d="M700 960C900 880 1100 940 1300 860S1700 760 1900 700" fill="none" stroke="#160a1f" stroke-width="96"/>
+<path d="M700 960C900 880 1100 940 1300 860S1700 760 1900 700" fill="none" stroke="#0f8f8a" stroke-width="78"/>
+<text font-size="30" fill="#ffc928" dy="10"><textPath id="tp" href="#riv" startOffset="0%">TERRA · CRECHE · DIREITOS · TERRA · CRECHE · DIREITOS</textPath></text>
+<rect x="900" y="560" width="300" height="40" fill="#ff5a1f" stroke="#160a1f" stroke-width="6"/>
+<g id="trib" transform="translate(1050 560)"></g>
+<g id="crowd4"></g>
+<g transform="translate(1720 380)" stroke="#160a1f" stroke-width="7"><path d="M-10 0L160-90L330 0Z" fill="#ffc928"/><rect x="0" y="0" width="320" height="26" fill="#fff1d6"/><g fill="#fff1d6"><rect x="16" y="26" width="34" height="290"/><rect x="96" y="26" width="34" height="290"/><rect x="176" y="26" width="34" height="290"/><rect x="256" y="26" width="34" height="290"/></g><rect x="-10" y="316" width="340" height="34" fill="#fff1d6"/></g>
+<g transform="translate(900 360)"><rect width="380" height="90" rx="40" fill="#fff1d6" stroke="#160a1f" stroke-width="7"/><path d="M120 86L110 160L190 90Z" fill="#fff1d6" stroke="#160a1f" stroke-width="7" stroke-linejoin="round"/><text x="190" y="60" text-anchor="middle" font-size="38" fill="#e3132c">TERRA! CRECHE!</text></g>
+</g></svg>
+<div class="lines"><div class="ln bl q"><p><b>Maquiavel · O Príncipe, cap. VI</b>Os profetas armados venceram. Os desarmados se arruinaram.</p></div><div class="ln bl"><p>No alto da torre, um sábio gritava a linha certa.</p></div><div class="ln bl"><p>Gritava tão alto, e tão sozinho, que só o eco respondia.</p></div><div class="ln bl"><p>Lá embaixo, na praça, um tribuno falava pra milhões.</p></div><div class="ln bl"><p>Mas o rio corria por baixo do palanque…</p><p>…e levava as palavras dele, uma por uma, pro palácio.</p></div><div class="ln bl"><p>Um tinha razão e não tinha povo.</p><p>O outro tinha povo, e a correnteza o arrastava.</p></div><div class="ln bl"><p>Coragem sobrava nos dois.</p><p class="y">Faltava a arma que decide: uma vontade organizada.</p></div></div>
+<p class="chip">IV · Os profetas desarmados</p>
+</div>
+</section>
+
+<!-- V -->
+<section class="ch" data-k="birth">
+<div class="pin">
+<svg class="scene" aria-label="Seis trabalhadores chegam um a um, se juntam numa figura gigante feita de gente, e um punho rompe um muro de tijolos"><g class="cam">
+<rect x="-4000" y="-4000" width="9600" height="9000" fill="#ff2e88"/>
+<g class="spin" id="raysC"></g>
+<rect x="-4000" y="-4000" width="9600" height="9000" fill="url(#dots)" opacity=".18"/>
+<g id="giant5" opacity="0"></g>
+<path d="M-4000 860H5600V5000H-4000Z" fill="#160a1f"/>
+<g id="six"></g>
+<g id="wall" opacity="0"></g>
+<g id="fist" opacity="0"></g>
+</g></svg>
+<div class="lines"><div class="ln tc big"><p>Então nasceu um Príncipe</p></div><div class="ln tl"><p>Não nasceu de barriga de rainha.</p><p>Nem de urna.</p></div><div class="ln tl"><p>A mãe da fila da creche deu a paciência.</p></div><div class="ln tl"><p>O entregador deu as pernas que atravessam a cidade.</p></div><div class="ln tl"><p>O petroleiro deu a mão que pode parar o país.</p></div><div class="ln tl"><p>O menino enquadrado na esquina deu a raiva.</p></div><div class="ln tl"><p>A mulher do sertão deu a terra.</p></div><div class="ln tl"><p>A migrante deu o caminho de volta.</p></div><div class="ln tl"><p>Uns poucos aprenderam a ler o rio.</p><p>Muitos aprenderam a confiar neles, porque viam os poucos do lado: na fila, na garagem, na ocupação.</p></div><div class="ln tl"><p>Os antigos diziam que é mais fácil juntar um exército do que formar capitães.</p><p class="y">O Príncipe fez os dois. E encurtou a distância entre eles.</p></div><div class="ln tl"><p>Na seca, ergueu os diques:</p><p>em cada quebrada, uma assembleia;</p><p class="y">em cada assembleia, delegados que voltam pra prestar contas.</p></div></div>
+<p class="chip">V · O nascimento</p>
+</div>
+</section>
+
+<!-- VI -->
+<section class="ch" data-k="vow">
+<div class="pin">
+<svg class="scene" aria-label="O círculo, a laje e o rio giram, se aproximam e se fundem no símbolo da união com o sol nascendo atrás da laje"><g class="cam">
+<rect x="-4000" y="-4000" width="9600" height="9000" fill="#1d0b33"/>
+<g class="spin fast" id="raysD"></g>
+<circle cx="800" cy="450" r="250" fill="#3a1257"/>
+<g id="sym1"><path d="M109.7 30.7A70 70 0 1 1 30.7 109.7" fill="none" stroke="#160a1f" stroke-width="40"/><path d="M109.7 30.7A70 70 0 1 1 30.7 109.7" fill="none" stroke="#fff1d6" stroke-width="26"/><path d="M30.7 90.3A70 70 0 0 1 90.3 30.7" fill="none" stroke="#e3132c" stroke-width="26"/></g>
+<g id="sym2" stroke="#160a1f" stroke-width="6"><rect x="28" y="112" width="58" height="60" fill="#fff1d6"/><rect x="58" y="62" width="44" height="50" fill="#22d3c5"/><rect x="102" y="82" width="46" height="90" fill="#e3132c"/><rect x="148" y="122" width="30" height="50" fill="#fff1d6"/><rect x="20" y="172" width="166" height="10" fill="#160a1f"/></g>
+<g id="sym3"><path d="M28 166C72 166 60 110 100 110S132 52 172 40" fill="none" stroke="#160a1f" stroke-width="24" stroke-linecap="round"/><path d="M28 166C72 166 60 110 100 110S132 52 172 40" fill="none" stroke="#22d3c5" stroke-width="12" stroke-linecap="round"/><g fill="#e3132c" stroke="#160a1f" stroke-width="5"><circle cx="28" cy="166" r="16"/><circle cx="100" cy="110" r="16"/><circle cx="172" cy="40" r="16"/></g></g>
+<use id="uni" href="#u3" opacity="0"/>
+<g id="burst" opacity="0"><use href="#bolt" transform="translate(470 240) scale(1.2) rotate(-30)"/><use href="#bolt" transform="translate(1080 220) scale(1.2) rotate(25)"/><use href="#bolt" transform="translate(450 620) scale(1) rotate(-140)"/><use href="#bolt" transform="translate(1140 650) scale(1) rotate(150)"/></g>
+</g></svg>
+<div class="lines"><div class="ln tl"><p>Antes de qualquer briga, o Príncipe fez um juramento.</p><p class="y">Juramento de povo: só prometia o que faltava.</p></div><div class="ln tl big"><p>Completar a Abolição</p></div><div class="ln tl big"><p>Direito à cidade</p></div><div class="ln tl big"><p>Integrar a periferia do país</p></div><div class="ln tl"><p>Três frases que qualquer um entende, da fila da creche à boca do poço.</p><p>E que nenhum dono pode cumprir, porque vive de quebrá-las.</p></div><div class="ln tl"><p>O círculo se fechou.</p><p>O sol nasceu atrás da laje.</p><p class="y">E o caminho passou na frente.</p></div></div>
+<p class="chip">VI · O juramento</p>
+</div>
+</section>
+
+<!-- VII -->
+<section class="ch" data-k="flood">
+<div class="pin">
+<svg class="scene" aria-label="Na noite da grande enchente o palácio racha, a sombra de um César se levanta, e depois todos os fogos acendem ao mesmo tempo enquanto cresce um segundo palácio de assembleias"><g class="cam">
+<rect x="-4000" y="-4000" width="9600" height="9000" fill="#0d0520"/>
+<g class="zap"><rect x="-4000" y="-4000" width="9600" height="9000" fill="#22d3c5" opacity=".25"/></g>
+<g id="cesar"><path d="M-160 900V560Q-160 470-50 455L50 440Q34 410 34 368Q34 280 120 274Q206 280 206 368Q206 410 190 440L290 455Q400 470 400 560V900Z" fill="#000" stroke="#ff2e88" stroke-width="8"/><path d="M28 314H212L196 266Q120 236 44 266Z" fill="#000" stroke="#ff2e88" stroke-width="8"/><rect x="40" y="300" width="160" height="22" fill="#ffc928"/></g>
+<g transform="translate(560 300)" stroke="#160a1f" stroke-width="8"><path d="M-10 0L240-110L490 0Z" fill="#ffc928"/><rect x="0" y="0" width="480" height="30" fill="#fff1d6"/><g fill="#fff1d6"><rect x="24" y="30" width="44" height="420"/><rect x="128" y="30" width="44" height="420"/><rect x="232" y="30" width="44" height="420"/><rect x="336" y="30" width="44" height="420"/><rect x="420" y="30" width="44" height="420"/></g><rect x="-20" y="450" width="520" height="40" fill="#fff1d6"/></g>
+<path id="crack" d="M805 196L775 300L830 380L770 470L825 560L780 640L800 750" fill="none" stroke="#e3132c" stroke-width="14" stroke-linejoin="bevel"/>
+<g id="assem"></g>
+<path d="M-4000 800C200 770 600 820 800 790S1400 780 5600 800V5000H-4000Z" fill="#160a1f"/>
+<rect id="flash" x="-4000" y="-4000" width="9600" height="9000" fill="#ffc928" opacity="0"/>
+<g id="lights"></g>
+<text id="juntos" x="800" y="150" text-anchor="middle" font-size="80" fill="#ffc928" stroke="#160a1f" stroke-width="12" paint-order="stroke" opacity="0">TODO MUNDO JUNTO</text>
+</g></svg>
+<div class="lines"><div class="ln tc big"><p>Então veio a grande enchente</p></div><div class="ln tl"><p>O palácio rachou de cima a baixo.</p><p>Os de cima já não conseguiam mandar como antes.</p><p>Os de baixo já não aceitavam viver como antes.</p></div><div class="ln br"><p>Da rachadura saiu um César.</p><p class="y">Prometia ordem. Trazia a bota.</p></div><div class="ln c big"><p>Só que, dessa vez…</p></div><div class="ln bc"><p class="y">…os fogos acenderam todos na mesma noite.</p></div><div class="ln tl"><p>Do sertão à garagem, da ocupação à refinaria,</p><p>as assembleias falaram com uma voz só.</p></div><div class="ln tl"><p>Agora havia dois poderes na terra:</p><p>o palácio velho, rachando, e o das assembleias, crescendo.</p></div><div class="ln tl"><p>E o Príncipe sabia o que fazer com o poder.</p><p class="y">Tinha aprendido antes da enchente.</p></div></div>
+<p class="chip">VII · A enchente</p>
+</div>
+</section>
+
+<!-- VIII -->
+<section class="ch" data-k="exhort">
+<div class="pin">
+<svg class="scene" aria-label="A câmera mergulha na cabeça da figura gigante e mostra que ela é feita de gente, que vai ficando vermelha diante do sol inteiro"><g class="cam">
+<rect x="-4000" y="-4000" width="9600" height="9000" fill="#1d0b33"/>
+<g class="spin" id="raysE"></g>
+<circle id="e8sun" cx="800" cy="430" r="320" fill="#ffc928"/>
+<circle cx="800" cy="430" r="390" fill="none" stroke="#e3132c" stroke-width="50"/>
+<g id="giant8"></g>
+<path d="M-4000 860C300 820 600 850 800 840S1300 810 5600 850V5000H-4000Z" fill="#160a1f"/>
+</g></svg>
+<div class="lines"><div class="ln tl q"><p><b>Maquiavel · O Príncipe, cap. XXVI</b>Não se deve deixar passar esta ocasião, para que, depois de tanto tempo, se veja aparecer um redentor.</p></div><div class="ln bl"><p>Esta terra espera há séculos alguém que termine o que ficou pela metade.</p></div><div class="ln bl"><p>Esperou rei, general, salvador.</p><p>Todos entregaram faltando um pedaço.</p></div><div class="ln bl"><p>Procuraram a cara do Príncipe pra pendurar na parede.</p><p class="y">Não acharam.</p></div><div class="ln bc big"><p>Ele tem a cara de cada um que o fez</p></div><div class="ln bl"><p>Ele já existe.</p><p>Um pedaço aqui, outro ali, espalhado pela terra.</p></div><div class="ln c big"><p>O pedaço que falta é você</p></div><div class="ln bc q"><p><b>Petrarca, no fecho de O Príncipe</b>A virtude contra o furor pegará em armas, e o combate será curto.</p></div></div>
+<p class="chip">VIII · Exortação</p>
+</div>
+</section>
+
+<footer>
+<p>Um manifesto visual em forma de mito. Inspirado em Nicolau Maquiavel, <i>O Príncipe</i>, capítulos VI, XXV e XXVI, e na leitura que Antonio Gramsci faz dele no Caderno 13 dos <i>Cadernos do cárcere</i>: o moderno Príncipe não é uma pessoa, é a vontade coletiva organizada. Símbolos dos Três pontos.</p>
+<p>Fabio Augustto</p>
+</footer>
+
+<script>
+{
+const $=id=>document.getElementById(id);
+const clamp=(x,a,b)=>Math.min(b,Math.max(a,x));
+const ss=(a,b,x)=>{const t=clamp((x-a)/(b-a),0,1);return t*t*(3-2*t)};
+const lerp=(a,b,t)=>a+(b-a)*t;
+const rng=seed=>{let s=seed;return()=>(s=s*16807%2147483647)/2147483647};
+const PAL=['#ff2e88','#22d3c5','#ffc928','#ff5a1f','#fff1d6','#e3132c'];
+const SKIN=['#6b3a1f','#8a4b26','#4a2614','#a8643a','#5c2f18','#7a4222'];
+
+// raios
+function rays(id,n,c1,c2){let s='';for(let i=0;i<n;i++){const a=i/n*Math.PI*2,b=(i+.5)/n*Math.PI*2,R=2600;s+=`<path d="M800 430L${(800+R*Math.cos(a)).toFixed(0)} ${(430+R*Math.sin(a)).toFixed(0)}L${(800+R*Math.cos(b)).toFixed(0)} ${(430+R*Math.sin(b)).toFixed(0)}Z" fill="${i%2?c1:c2}"/>`}$(id).innerHTML=s}
+rays('raysA',28,'#2b0f4a','#3a1257');rays('raysB',24,'#241040','#1d0b33');rays('raysC',30,'#ff5a1f','#ff2e88');rays('raysD',32,'#3a1257','#1d0b33');rays('raysE',28,'#2b0f4a','#3a1257');
+
+// gigante: black power, cabeça, ombros e punho erguido, recheado de gente
+function giant(id,seed,share,tag){
+  const r=rng(seed);let s='';
+  for(let y=40;y<880;y+=26){for(let x=440;x<1200;x+=22){
+    const jx=x+(r()-.5)*9,jy=y+(r()-.5)*7,c=r()<share?'#e3132c':PAL[Math.floor(r()*5)];
+    s+=`<use href="#mini" transform="translate(${jx.toFixed(0)} ${jy.toFixed(0)}) scale(.55)" fill="${c}"${tag?` data-r="${r().toFixed(3)}" data-c="${c}"`:''}/>`;
+  }}
+  const clip=`<clipPath id="${id}c"><circle cx="800" cy="250" r="150"/><circle cx="800" cy="320" r="95"/><path d="M700 430Q700 410 760 404H840Q900 410 900 430L980 470Q1060 490 1070 560L1090 880H510L530 560Q540 490 620 470Z"/><path d="M990 520L1050 250L1130 262L1080 540Z"/><rect x="1020" y="150" width="140" height="130" rx="40"/></clipPath>`;
+  return clip+`<g clip-path="url(#${id}c)"><rect x="400" y="0" width="900" height="900" fill="#160a1f"/>${s}</g>`+
+  `<g fill="none" stroke="#160a1f" stroke-width="10"><circle cx="800" cy="250" r="150"/><path d="M700 430Q700 410 760 404H840Q900 410 900 430L980 470Q1060 490 1070 560L1090 880M510 880L530 560Q540 490 620 470L700 430"/><path d="M990 520L1050 250M1080 540L1130 262"/><rect x="1020" y="150" width="140" height="130" rx="40"/></g>`;
+}
+$('giant0').innerHTML=giant('g0',7,.08);
+$('giant5').innerHTML=giant('g5',23,.12);
+$('giant8').innerHTML=giant('g8',11,0,true);
+const c8=[...document.querySelectorAll('#giant8 use[data-r]')];
+
+// estrelas e caracóis
+{const r=rng(3);let s='';for(let i=0;i<70;i++)s+=`<circle class="twk" cx="${(r()*2400-400).toFixed(0)}" cy="${(r()*360).toFixed(0)}" r="${(1.5+r()*3).toFixed(1)}" fill="#fff1d6" style="animation-delay:${(r()*2.4).toFixed(2)}s"/>`;$('stars').innerHTML=s;}
+{let s='';for(let i=0;i<9;i++){const x=-200+i*240,y=640+(i%2)*40;s+=`<path d="M${x} ${y}c40-40 90-10 70 30c-14 28-56 14-40-12"/>`}$('curls1').innerHTML=s;}
+
+// I fogos isolados
+const fpos=[[120,470],[420,430],[700,450],[1000,420],[1260,450],[240,610],[560,600],[880,620],[1180,600],[80,760],[400,770],[720,740],[1040,770],[1380,750]];
+$('fires').innerHTML=fpos.map(([x,y])=>`<g transform="translate(${x} ${y})"><ellipse rx="40" ry="10" fill="#160a1f" opacity=".5"/><g class="fl" opacity="0"><circle cy="-50" r="120" fill="url(#glow)"/><g class="flick"><use href="#flame" transform="scale(.8)"/></g><use href="#mini" transform="translate(-48 6) scale(1.1)" fill="#160a1f"/><use href="#mini" transform="translate(50 6) scale(1.1)" fill="#160a1f"/></g></g>`).join('');
+const fls=[...document.querySelectorAll('#fires .fl')];
+
+// II lajes
+const lj=[[1840,780,150,90],[1990,760,130,110],[1880,680,120,100],[2120,700,150,110],[2010,640,120,110],[2280,620,160,120],[2140,580,140,110],[2450,560,150,120],[2300,500,140,110],[2600,480,160,110],[2450,430,140,100],[2760,420,150,110]];
+$('lajes').innerHTML=lj.map(([x,y,w,h],i)=>`<g class="lj" opacity="0"><rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${['#fff1d6','#ff5a1f','#ffc928','#ff2e88','#22d3c5'][i%5]}" stroke="#160a1f" stroke-width="7"/><rect x="${x+18}" y="${y+22}" width="26" height="26" fill="#160a1f"/><rect x="${x+w-46}" y="${y+22}" width="26" height="26" fill="#160a1f"/></g>`).join('');
+const ljs=[...document.querySelectorAll('#lajes .lj')];
+
+// III favelas, chuva
+function fav(x0,n,seed){const r=rng(seed);let s='',x=x0;for(let i=0;i<n;i++){const w=90+r()*60,h=90+r()*120,c=PAL[Math.floor(r()*5)];s+=`<rect x="${x.toFixed(0)}" y="${(800-h).toFixed(0)}" width="${w.toFixed(0)}" height="${h.toFixed(0)}" fill="${c}" stroke="#160a1f" stroke-width="7"/><rect x="${(x+20).toFixed(0)}" y="${(800-h+24).toFixed(0)}" width="24" height="24" fill="#160a1f"/>`;x+=w+6}return s}
+$('favL').innerHTML=fav(80,6,4);$('favR').innerHTML=fav(1000,5,8);
+{const r=rng(5);let s='';for(let i=0;i<160;i++){const x=r()*2400-400,y=r()*1000-200;s+=`<path d="M${x.toFixed(0)} ${y.toFixed(0)}l-14 40"/>`}$('rainL').innerHTML=s;}
+function wave(y){let d=`M-400 ${y}`;for(let x=-400;x<1400;x+=100)d+=`q50 -26 100 0`;return d+`V1300H-400Z`}
+$('w1').setAttribute('d',wave(0));$('w1b').setAttribute('d',(()=>{let d='M-400 20';for(let x=-400;x<1400;x+=100)d+='q50 -26 100 0';return d})());
+const wcl=document.createElementNS('http://www.w3.org/2000/svg','clipPath');wcl.id='wclip';wcl.innerHTML='<rect x="-4000" y="-4000" width="4930" height="9000"/>';document.querySelector('#wl').parentNode.insertBefore(wcl,document.querySelector('#wl'));$('wl').setAttribute('clip-path','url(#wclip)');
+
+// pessoas em estilo HQ
+function person(o){
+  const sk=o.skin||SKIN[0],sh=o.shirt||'#22d3c5';let s='';
+  if(o.hair==='afro')s+=`<circle cy="-178" r="52" fill="#160a1f"/>`;
+  if(o.acc==='bag')s+=`<rect x="-82" y="-130" width="62" height="62" fill="#e3132c" stroke="#160a1f" stroke-width="6"/><path d="M-70-110h38" stroke="#fff1d6" stroke-width="5"/>`;
+  s+=`<path d="M-58 0L-50-98Q-46-124-20-128H20Q46-124 50-98L58 0Z" fill="${sh}" stroke="#160a1f" stroke-width="6" stroke-linejoin="round"/>`;
+  if(o.acc==='up')s+=`<path d="M-40-110L-70-230M40-110L70-230" stroke="${sk}" stroke-width="22" stroke-linecap="round"/><path d="M-40-110L-70-230M40-110L70-230" stroke="#160a1f" stroke-width="30" stroke-linecap="round" opacity=".0"/>`;
+  else s+=`<path d="M-48-100L-62-20M48-100L62-20" stroke="${sk}" stroke-width="20" stroke-linecap="round"/>`;
+  s+=`<rect x="-12" y="-142" width="24" height="18" fill="${sk}"/><ellipse cy="-170" rx="32" ry="36" fill="${sk}" stroke="#160a1f" stroke-width="6"/>`;
+  if(o.hair==='cap')s+=`<path d="M-34-182Q-30-214 0-214Q30-214 34-182Z" fill="#ff2e88" stroke="#160a1f" stroke-width="5"/><path d="M0-186h52v12H0z" fill="#ff2e88" stroke="#160a1f" stroke-width="5"/>`;
+  if(o.hair==='helmet')s+=`<path d="M-38-176Q-36-222 0-222Q36-222 38-176Z" fill="#ffc928" stroke="#160a1f" stroke-width="5"/><rect x="-44" y="-182" width="88" height="10" fill="#ffc928" stroke="#160a1f" stroke-width="4"/>`;
+  if(o.hair==='wrap')s+=`<path d="M-36-176Q-40-226 0-226Q40-226 36-176Q20-192 0-192Q-20-192-36-176Z" fill="#e3132c" stroke="#160a1f" stroke-width="5"/>`;
+  if(o.glass)s+=`<rect x="-28" y="-180" width="56" height="16" rx="6" fill="${o.glass}" stroke="#160a1f" stroke-width="4"/>`;
+  if(o.acc==='kid')s+=`<g transform="translate(78 0) scale(.55)"><path d="M-58 0L-50-98Q-46-124-20-128H20Q46-124 50-98L58 0Z" fill="#ffc928" stroke="#160a1f" stroke-width="8"/><ellipse cy="-170" rx="34" ry="38" fill="${SKIN[3]}" stroke="#160a1f" stroke-width="8"/><circle cy="-200" r="30" fill="#160a1f"/></g>`;
+  if(o.acc==='hoe')s+=`<path d="M62-20L120-250" stroke="#8a4b26" stroke-width="10"/><path d="M106-252l42-6 6 30z" fill="#fff1d6" stroke="#160a1f" stroke-width="5"/>`;
+  if(o.acc==='case')s+=`<rect x="56" y="-56" width="58" height="46" rx="6" fill="#ff5a1f" stroke="#160a1f" stroke-width="6"/><path d="M74-56v-10h22v10" fill="none" stroke="#160a1f" stroke-width="5"/>`;
+  return s;
+}
+const SIX=[{skin:SKIN[1],shirt:'#fff1d6',hair:'afro',acc:'kid'},{skin:SKIN[0],shirt:'#22d3c5',hair:'cap',acc:'bag',glass:'#22d3c5'},{skin:SKIN[3],shirt:'#ff5a1f',hair:'helmet'},{skin:SKIN[2],shirt:'#160a1f',hair:'afro',acc:'up',glass:'#ffc928'},{skin:SKIN[4],shirt:'#ffc928',hair:'wrap',acc:'hoe'},{skin:SKIN[5],shirt:'#ff2e88',hair:'afro',acc:'case'}];
+const sx=[150,400,650,950,1200,1450],ex=[560,660,760,860,960,1060];
+$('six').innerHTML=SIX.map(o=>`<g class="ch6" opacity="0">${person(o)}</g>`).join('');
+const c6=[...document.querySelectorAll('.ch6')];
+$('trib').innerHTML=`<g transform="scale(.8)">${person({skin:SKIN[1],shirt:'#e3132c',hair:'afro',acc:'up'})}</g>`;
+{const r=rng(9);let s='';for(let i=0;i<70;i++){const x=780+r()*560,y=700+r()*190;s+=`<use href="#mini" transform="translate(${x.toFixed(0)} ${y.toFixed(0)}) scale(1.5)" fill="${PAL[Math.floor(r()*5)]}" stroke="#160a1f" stroke-width="2"/>`}$('crowd4').innerHTML=s;}
+
+// muro e punho
+{const r=rng(2);let s='';for(let i=0;i<22;i++){const x=480+(i%11)*60,y=760+Math.floor(i/11)*30;const ang=(r()-.5)*2;s+=`<rect class="bk" data-vx="${((x-800)/3+(r()-.5)*80).toFixed(0)}" data-vy="${(-160-r()*220).toFixed(0)}" data-rt="${(ang*90).toFixed(0)}" x="${x}" y="${y}" width="58" height="28" fill="#ff5a1f" stroke="#160a1f" stroke-width="5"/>`}$('wall').innerHTML=s;}
+const bks=[...document.querySelectorAll('#wall .bk')];
+$('fist').innerHTML=`<path d="M740 900L752 600Q754 560 800 556Q846 560 848 600L860 900Z" fill="${SKIN[1]}" stroke="#160a1f" stroke-width="10"/><path d="M712 470Q706 418 760 412H850Q902 418 896 474L890 560Q880 600 800 600Q726 600 716 560Z" fill="${SKIN[1]}" stroke="#160a1f" stroke-width="10"/><path d="M740 470V430M780 470V418M820 470V418M860 470V428M716 500Q760 520 806 498" fill="none" stroke="#160a1f" stroke-width="8" stroke-linecap="round"/><path d="M760 588h80" stroke="#ffc928" stroke-width="12"/>`;
+
+// VII luzes e assembleias
+{const r=rng(31);let s='';for(let i=0;i<34;i++){const x=-200+i*60+r()*20,y=810+r()*100;s+=`<g transform="translate(${x.toFixed(0)} ${y.toFixed(0)}) scale(.55)" class="lt" opacity="0"><circle cy="-50" r="110" fill="url(#glow)"/><g class="flick" style="animation-delay:${(r()*.3).toFixed(2)}s"><use href="#flame"/></g></g>`}$('lights').innerHTML=s;}
+const lts=[...document.querySelectorAll('#lights .lt')];
+{let s='';for(let row=0;row<8;row++){for(let c=0;c<5;c++){s+=`<g class="as" opacity="0" transform="translate(${1180+c*64+(row%2)*32} ${760-row*62})"><circle r="27" fill="${PAL[(row+c)%5]}" stroke="#160a1f" stroke-width="6"/><use href="#mini" transform="translate(0 16) scale(.7)" fill="#160a1f"/></g>`}}$('assem').innerHTML=s;}
+const ass=[...document.querySelectorAll('#assem .as')];
+const crack=$('crack');const cl=crack.getTotalLength();crack.style.strokeDasharray=cl;
+
+// linhas: janela de cada fala
+const secs=[...document.querySelectorAll('.ch')];
+secs.forEach(sec=>{
+  const lns=[...sec.querySelectorAll('.ln')],n=lns.length;
+  const auto=lns.filter(l=>!l.dataset.t);
+  const d=.9/Math.max(1,auto.length);
+  auto.forEach((l,i)=>{l._a=.05+i*d;l._b=i===auto.length-1?1.2:.05+(i+1)*d});
+  lns.filter(l=>l.dataset.t).forEach(l=>{const [a,b]=l.dataset.t.split(',').map(Number);l._a=a;l._b=b});
+  lns.forEach(l=>{l._kids=l.classList.contains('big')||l.querySelector('.titlebox')?[]:[...l.children]});
+  sec._lns=lns;
+  const boxes=sec.querySelectorAll('.ln p').length;sec.style.height=((sec.dataset.h?+sec.dataset.h:Math.max(3,n*.55+boxes*.35+1.2))*100)+'svh';
+});
+
+// cena por capítulo: devolve câmera {x,y,z}
+const ups={
+ cover:p=>({x:800,y:470,z:lerp(1.12,.98,p)}),
+ dispersed:p=>{const n=fls.length;fls.forEach((f,i)=>{const d=Math.abs(p*(n+1)-1-i);f.setAttribute('opacity',clamp(1.4-d*1.2,0,1).toFixed(2))});return{x:lerp(600,1000,p),y:520,z:1.05}},
+ promises:p=>{const t=ss(.06,.94,p);const q=clamp((t-.38)/.26,0,1);ljs.forEach((l,i)=>l.setAttribute('opacity',q*ljs.length>i?1:0));$('chain').setAttribute('transform',`translate(0 ${(-p*120).toFixed(0)})`);return{x:lerp(800,4000,t),y:470,z:1}},
+ river:p=>{const y=lerp(800,330,ss(.05,.85,p));$('wl').firstElementChild.setAttribute('transform','');$('w1').setAttribute('transform',`translate(0 ${y.toFixed(0)})`);$('w1b').setAttribute('transform',`translate(0 ${y.toFixed(0)})`);$('glub').setAttribute('opacity',p>.55?1:0);return{x:lerp(700,820,p),y:520,z:lerp(1,1.12,p)}},
+ prophets:p=>{$('tp').setAttribute('startOffset',(p*70)+'%');return{x:lerp(520,1300,ss(.15,.75,p)),y:lerp(380,520,p),z:lerp(1.15,.95,p)}},
+ birth:p=>{
+  const conv=ss(.66,.82,p);
+  c6.forEach((c,i)=>{const show=ss(.1+i*.08,.16+i*.08,p);const x=lerp(sx[i],ex[i],conv),y=860,s=lerp(1.05,.62,conv);c.setAttribute('opacity',(show*(1-ss(.84,.9,p)*.7)).toFixed(2));c.setAttribute('transform',`translate(${x.toFixed(0)} ${(y+(1-show)*80).toFixed(0)}) scale(${s.toFixed(2)})`)});
+  const f=ss(.86,.97,p);
+  $('giant5').setAttribute('opacity',(ss(.72,.86,p)*(1-.65*f)).toFixed(2));
+  $('wall').setAttribute('opacity',p>.84?1:0);$('fist').setAttribute('opacity',f.toFixed(2));$('fist').setAttribute('transform',`translate(800 900) scale(1.3) translate(-800 ${(-900+(1-f)*300).toFixed(0)})`);
+  bks.forEach(b=>b.setAttribute('transform',`translate(${(+b.dataset.vx*f).toFixed(0)} ${(+b.dataset.vy*f).toFixed(0)}) rotate(${(+b.dataset.rt*f).toFixed(0)} ${+b.getAttribute('x')+29} ${+b.getAttribute('y')+14})`));
+  return{x:800,y:lerp(560,480,conv),z:lerp(1.05,.95,conv)}},
+ vow:p=>{const t=ss(.62,.86,p);const k=lerp(1.25,.6,t);[[1,500],[2,800],[3,1100]].forEach(([n,x],i)=>{const show=ss(.18+i*.15,.26+i*.15,p);const cx=lerp(x,800,t);const el=$('sym'+n);el.setAttribute('transform',`translate(${(cx-100*k).toFixed(0)} ${(450-100*k+(1-show)*120).toFixed(0)}) scale(${k.toFixed(2)})`);el.setAttribute('opacity',(show*(1-ss(.8,.88,p))).toFixed(2))});const u=ss(.82,.92,p),s=2.4;$('uni').setAttribute('transform',`translate(${800-120*s} ${450-120*s}) scale(${s})`);$('uni').setAttribute('opacity',u.toFixed(2));$('burst').setAttribute('opacity',u.toFixed(2));return{x:800,y:450,z:lerp(1,1.08,u)}},
+ flood:p=>{crack.style.strokeDashoffset=(cl*(1-ss(.1,.3,p))).toFixed(0);const up=ss(.28,.42,p),down=ss(.6,.72,p);$('cesar').setAttribute('opacity',(up*(1-down)).toFixed(2));$('cesar').setAttribute('transform',`translate(${(-down*500).toFixed(0)} ${((1-up)*200).toFixed(0)})`);const on=p>.56;lts.forEach(l=>l.setAttribute('opacity',on?1:0));$('flash').setAttribute('opacity',(on?clamp(1-(p-.56)*14,0,.8):0).toFixed(2));$('juntos').setAttribute('opacity',ss(.56,.6,p)*(1-ss(.72,.76,p)));const n=Math.floor(ss(.62,.9,p)*ass.length);ass.forEach((a,i)=>a.setAttribute('opacity',i<n?1:0));return{x:lerp(800,900,p),y:470,z:lerp(1,1.05,p)}},
+ exhort:p=>{const share=ss(.5,.95,p);c8.forEach(u=>u.setAttribute('fill',+u.dataset.r<share?'#e3132c':u.dataset.c));$('e8sun').setAttribute('cy',lerp(470,380,p).toFixed(0));const zin=ss(.3,.5,p)*(1-ss(.62,.8,p));return{x:800,y:lerp(470,250,zin),z:lerp(1,3.2,zin)}}
+};
+
+// PALMARES
+function palm(x,y,s){return `<g transform="translate(${x} ${y}) scale(${s})"><g class="sway"><path d="M-8 0Q-2-90 10-180" fill="none" stroke="#160a1f" stroke-width="22" stroke-linecap="round"/><path d="M-8 0Q-2-90 10-180" fill="none" stroke="#8a4b26" stroke-width="12" stroke-linecap="round"/>${[[-110,-150],[-80,-230],[10,-260],[100,-230],[120,-150]].map(([a,b])=>`<path d="M10-180Q${(a*.5).toFixed(0)} ${b-20} ${a} ${b}Q${(a*.6).toFixed(0)} ${b+10} 10-180Z" fill="${a<0?'#22d3c5':'#0b4f63'}" stroke="#160a1f" stroke-width="6"/>`).join('')}</g></g>`}
+$('palms').innerHTML=[[560,360,.8],[1060,370,.75],[690,300,.6],[930,300,.6],[460,520,1],[1160,520,1]].map(a=>palm(...a)).join('');
+$('huts').innerHTML=[650,720,880,950,800].map((x,i)=>`<g transform="translate(${x} ${i===4?300:330})"><rect x="-34" y="-36" width="68" height="36" fill="#fff1d6" stroke="#160a1f" stroke-width="5"/><path d="M-50-30L0-80L50-30Z" fill="#ffc928" stroke="#160a1f" stroke-width="5"/></g>`).join('');
+{let s='';for(let x=600;x<=1000;x+=22){const y=360-Math.max(0,60-Math.abs(x-800)/4);s+=`<path d="M${x-8} 380V${(y).toFixed(0)}L${x} ${(y-18).toFixed(0)}L${x+8} ${(y).toFixed(0)}V380Z" fill="#8a4b26" stroke="#160a1f" stroke-width="3"/>`}$('stake').innerHTML=s;}
+$('hutfire').innerHTML=[650,720,880,950,800].map((x,i)=>`<g transform="translate(${x} ${i===4?260:290}) scale(.55)"><g class="flick"><use href="#flame"/></g></g>`).join('');
+{let s='';for(let i=0;i<16;i++){const t=i/15,x=lerp(180,600,t),y=lerp(870,450,t)+((i%2)*18);s+=`<g class="bd" transform="translate(${x.toFixed(0)} ${y.toFixed(0)}) scale(1.2)"><use href="#mini" fill="#160a1f" stroke="#e3132c" stroke-width="2.5"/><path d="M-12-48H12L8-62H-8Z" fill="#160a1f" stroke="#e3132c" stroke-width="2"/><path d="M14-20L40-36" stroke="#160a1f" stroke-width="5"/></g>`}$('band').innerHTML=s;}
+$('band').setAttribute('opacity',0);
+$('puffs').innerHTML=[[330,700],[450,580],[240,800]].map(([x,y])=>`<g transform="translate(${x} ${y})"><path d="M0 0l70-20" stroke="#160a1f" stroke-width="18"/><circle cx="90" cy="-30" r="34" fill="#fff1d6"/><circle cx="126" cy="-50" r="26" fill="#fff1d6"/></g>`).join('');
+{const r=rng(13);let s='';for(let i=0;i<90;i++)s+=`<circle class="twk" cx="${(r()*2600-500).toFixed(0)}" cy="${(r()*420-180).toFixed(0)}" r="${(1.5+r()*2.5).toFixed(1)}" fill="#fff1d6" style="animation-delay:${(r()*2.4).toFixed(2)}s"/>`;$('stars2').innerHTML=s;}
+{const pts=[[800,-30],[760,0],[840,0],[800,30],[730,60],[870,60],[740,180],[860,180],[760,300],[840,300],[930,-80],[960,40]];
+ $('zumbi').innerHTML=`<g fill="none" stroke="#ffc928" stroke-width="5" stroke-dasharray="2 12" stroke-linecap="round"><circle cx="800" cy="-40" r="44"/><path d="M730 60Q730 10 780 6H820Q870 10 870 60L880 320H720Z"/><path d="M870 60L940 -10M940 -120V120"/></g><path d="M928-150L940-190L952-150Z" fill="#ffc928"/>`+pts.map(([x,y])=>`<circle cx="${x}" cy="${y}" r="6" fill="#fff1d6"/>`).join('');}
+const bds=[...document.querySelectorAll('#band .bd')];
+// CANUDOS
+$('cacti').innerHTML=[[200,600,1.1],[1420,620,1.2],[380,760,.8],[1300,780,.9]].map(([x,y,s])=>`<g transform="translate(${x} ${y}) scale(${s})" fill="#0f8f8a" stroke="#160a1f" stroke-width="6"><path d="M-14 0V-190Q0-206 14-190V0Z"/><path d="M-14-90H-60V-150Q-50-162-40-150V-110H-14ZM14-120H56V-170Q46-182 36-170V-138H14Z"/></g>`).join('');
+{const r=rng(17);let hs='',bs='';const P=[];for(let row=0;row<6;row++){for(let c=0;c<14;c++){const x=420+c*58+(row%2)*29+(r()-.5)*10,y=560+row*52+(r()-.5)*8;if(Math.abs(x-800)<130&&y<620)continue;P.push([x,y])}}
+ P.sort((a,b)=>Math.hypot(a[0]-800,a[1]-600)-Math.hypot(b[0]-800,b[1]-600));
+ P.forEach(([x,y],i)=>{hs+=`<g class="hs" opacity="0" transform="translate(${x.toFixed(0)} ${y.toFixed(0)})"><rect x="-22" y="-26" width="44" height="26" fill="#f3d9a4" stroke="#160a1f" stroke-width="4"/><path d="M-28-22L0-40L28-22Z" fill="#8a4b26" stroke="#160a1f" stroke-width="4"/></g>`;bs+=`<g class="bn" opacity="0" transform="translate(${x.toFixed(0)} ${(y-8).toFixed(0)}) scale(.36)"><use href="#flame"/></g>`});
+ $('houses').innerHTML=hs;$('burn').innerHTML=bs;}
+const hss=[...document.querySelectorAll('#houses .hs')],bns=[...document.querySelectorAll('#burn .bn')];
+{let s='';for(let row=0;row<4;row++)for(let c=0;c<9;c++){s+=`<g transform="translate(${1500+c*46+row*20} ${640+row*60}) scale(1.05)"><use href="#mini" fill="#3a1257" stroke="#160a1f" stroke-width="2"/><path d="M-11-48H11V-58H-11Z" fill="#160a1f"/><path d="M-14-24L-40-50" stroke="#160a1f" stroke-width="4"/></g>`}$('troops').innerHTML=s;}
+$('smoke').innerHTML=[[1460,520],[1560,470]].map(([x,y])=>`<g transform="translate(${x} ${y})"><rect x="-40" y="10" width="90" height="26" rx="10" fill="#160a1f"/><path d="M-30 18l-60-14" stroke="#160a1f" stroke-width="16"/><circle cx="-110" cy="-6" r="36" fill="#fff1d6"/><circle cx="-150" cy="-30" r="26" fill="#fff1d6"/></g>`).join('');
+$('last4').innerHTML+=`<g transform="translate(740 760)">${person({skin:SKIN[4],shirt:'#fff1d6',hair:'wrap'}).replace('#e3132c','#fff1d6')}</g>`.replace(/^/,'')+`<g transform="translate(860 760)">${person({skin:SKIN[1],shirt:'#ff5a1f',hair:'cap'})}</g><g transform="translate(640 760) scale(.95)">${person({skin:SKIN[2],shirt:'#22d3c5',hair:'afro'})}</g><g transform="translate(960 760) scale(.55)">${person({skin:SKIN[3],shirt:'#ffc928',hair:'afro'})}</g>`;
+// TERRA
+{let s='';for(let x=-200;x<1500;x+=26){const h=180+((x*7)%60);s+=`<path d="M${x} 860V${860-h}" stroke="#0b4f63" stroke-width="10"/><path d="M${x} ${860-h*.6}l24-30M${x} ${860-h*.85}l-22-26" stroke="#22d3c5" stroke-width="6" stroke-linecap="round"/>`}$('cane').innerHTML=s;}
+$('ligas').innerHTML=[[360,860,{skin:SKIN[1],shirt:'#ff5a1f',hair:'cap',acc:'hoe'}],[520,860,{skin:SKIN[4],shirt:'#fff1d6',hair:'wrap',acc:'hoe'}],[680,860,{skin:SKIN[0],shirt:'#22d3c5',hair:'afro',acc:'up'}],[840,860,{skin:SKIN[3],shirt:'#ffc928',hair:'helmet',acc:'hoe'}],[1000,860,{skin:SKIN[2],shirt:'#ff2e88',hair:'afro',acc:'hoe'}]].map(([x,y,o])=>`<g transform="translate(${x} ${y}) scale(.9)">${person(o)}</g>`).join('');
+{const r=rng(41);let s='';for(let i=0;i<120;i++){const x=1660+r()*1480,y=740+r()*150;s+=`<use href="#mini" transform="translate(${x.toFixed(0)} ${y.toFixed(0)}) scale(1.6)" fill="${PAL[Math.floor(r()*5)]}" stroke="#160a1f" stroke-width="2"/>`}$('central').innerHTML=s;}
+function tank(x,y){return `<g class="tk" transform="translate(${x} ${y})"><rect x="-150" y="-60" width="300" height="70" rx="18" fill="#2b0f4a" stroke="#ff2e88" stroke-width="7"/><rect x="-70" y="-120" width="140" height="64" rx="16" fill="#2b0f4a" stroke="#ff2e88" stroke-width="7"/><rect x="-250" y="-100" width="190" height="20" fill="#2b0f4a" stroke="#ff2e88" stroke-width="6"/>${[-110,-55,0,55,110].map(c=>`<circle cx="${c}" cy="20" r="24" fill="#160a1f" stroke="#ff2e88" stroke-width="6"/>`).join('')}</g>`}
+$('tanks').innerHTML=tank(0,0)+tank(380,40);
+{let s='';const L=[[3440,780,150,90],[3590,760,130,110],[3480,680,120,100],[3720,700,150,110],[3610,640,120,110],[3880,620,160,120],[3740,580,140,110],[4050,560,150,120],[3900,500,140,110],[4200,480,160,110],[4050,430,140,100],[4360,420,150,110]];s=L.map(([x,y,w,hh],i)=>`<g class="l2" opacity="0"><rect x="${x}" y="${y}" width="${w}" height="${hh}" fill="${['#fff1d6','#ff5a1f','#ffc928','#ff2e88','#22d3c5'][i%5]}" stroke="#160a1f" stroke-width="7"/><rect x="${x+18}" y="${y+22}" width="26" height="26" fill="#160a1f"/></g>`).join('');$('lajes2').innerHTML=s;}
+const l2s=[...document.querySelectorAll('#lajes2 .l2')];
+$('walkers').innerHTML=[0,1,2,3,4,5].map(i=>`<g class="wk"><use href="#mini" transform="scale(1.6)" fill="${PAL[i%5]}" stroke="#160a1f" stroke-width="2"/><rect x="10" y="-34" width="22" height="18" fill="#ff5a1f" stroke="#160a1f" stroke-width="3"/></g>`).join('');
+const wks=[...document.querySelectorAll('#walkers .wk')];
+Object.assign(ups,{
+ palmares:p=>{const atk=ss(.55,.68,p);$('band').setAttribute('opacity',atk.toFixed(2));$('band').setAttribute('transform',`translate(${((1-atk)*-140).toFixed(0)} ${((1-atk)*60).toFixed(0)})`);$('puffs').setAttribute('opacity',ss(.6,.64,p)*(1-ss(.8,.86,p)));const fire=ss(.62,.7,p);$('hutfire').setAttribute('opacity',fire*(1-ss(.84,.9,p)*.6));$('pfire').setAttribute('opacity',(1-fire).toFixed(2));const z=ss(.82,.9,p);$('zumbi').setAttribute('opacity',z.toFixed(2));return{x:lerp(800,720,atk*(1-z)),y:lerp(470,170,z),z:lerp(1,1.12,ss(.1,.5,p))*(1-.15*z)}},
+ canudos:p=>{const g=ss(.08,.4,p);hss.forEach((x,i)=>x.setAttribute('opacity',g*hss.length>i?1:0));const tr=ss(.5,.72,p);$('troops').setAttribute('transform',`translate(${(-tr*520).toFixed(0)} 0)`);$('troops').setAttribute('opacity',(ss(.48,.52,p)*(1-ss(.72,.76,p))).toFixed(2));$('smoke').setAttribute('opacity',(ss(.55,.58,p)*(1-ss(.72,.76,p))).toFixed(2));const b=ss(.6,.7,p);bns.forEach((x,i)=>x.setAttribute('opacity',b*bns.length>(bns.length-1-i)?(p>.76?.0:1):0));hss.forEach((x,i)=>{if(p>.74)x.setAttribute('opacity',.25)});$('last4').setAttribute('opacity',ss(.72,.77,p).toFixed(2));return{x:lerp(800,1010,ss(.7,.8,p)),y:lerp(560,620,ss(.7,.8,p)),z:lerp(1,1.2,ss(.7,.8,p))}},
+ terra:p=>{const cx=p<.6?lerp(800,2400,ss(.38,.5,p)):lerp(2400,4000,ss(.78,.86,p));const tk=ss(.58,.7,p);$('tanks').setAttribute('transform',`translate(${lerp(3400,2560,tk).toFixed(0)} 860)`);const l=ss(.84,.95,p);l2s.forEach((x,i)=>x.setAttribute('opacity',l*l2s.length>i?1:0));wks.forEach((w,i)=>{const s=clamp((p-.82)*6-i*.12,0,1);w.setAttribute('transform',`translate(${lerp(3180,3560,s).toFixed(0)} ${lerp(850,800,s).toFixed(0)})`);w.setAttribute('opacity',s>0?1:0)});return{x:cx,y:500,z:1}}
+});
+
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const bar=$('bar');const last={};
+function cam(sec,c){
+  const svg=sec.querySelector('.scene'),W=svg.clientWidth,H=svg.clientHeight;if(!W||!H)return;
+  if(svg._w!==W||svg._h!==H){svg.setAttribute('viewBox',`0 0 ${W} ${H}`);svg._w=W;svg._h=H}
+  const CW=W<H?900:1250,CH=W<H?760:820,S=Math.min(W/CW,H/CH)*c.z;
+  svg.querySelector('.cam').setAttribute('transform',`translate(${(W/2).toFixed(1)} ${(H/2).toFixed(1)}) scale(${S.toFixed(4)}) translate(${(-c.x).toFixed(1)} ${(-c.y).toFixed(1)})`);
+}
+function frame(force){
+  const H=innerHeight;
+  secs.forEach(sec=>{
+    const k=sec.dataset.k,r=sec.getBoundingClientRect();
+    if(r.bottom<-H||r.top>2*H)return;
+    const p=reduce?1:clamp(-r.top/Math.max(1,r.height-H),0,1);
+    if(force!==true&&last[k]!==undefined&&Math.abs(last[k]-p)<.0015)return;
+    last[k]=p;
+    cam(sec,ups[k](p));
+    if(!reduce)sec._lns.forEach(l=>{const f=.03,o=ss(l._a,l._a+f,p)*(1-ss(l._b-f,l._b,p));l.style.opacity=o.toFixed(3);l.style.transform=`translateY(${((1-ss(l._a,l._a+f,p))*30).toFixed(1)}px)`;const kids=l._kids;if(kids.length>1){const span=Math.min(l._b,1)-l._a;kids.forEach((c,j)=>{if(!j)return;const a=l._a+j*span*.28;c.style.opacity=ss(a,a+f,p).toFixed(3);c.style.transform=`translateY(${((1-ss(a,a+f,p))*16).toFixed(1)}px)`})}});
+  });
+  bar.style.transform=`scaleX(${clamp(scrollY/Math.max(1,document.documentElement.scrollHeight-H),0,1)})`;
+  tick=false;
+}
+let tick=false;
+addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(frame)}},{passive:true});
+addEventListener('resize',()=>{for(const k in last)delete last[k];frame(true)});
+frame(true);
+if(reduce)secs.forEach(sec=>cam(sec,ups[sec.dataset.k](1)));
+}
+</script>
+</body>
+</html>
